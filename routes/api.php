@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
+
 use App\Models\Product;
 use App\Models\Banner;
 use App\Models\Category;
@@ -32,6 +34,10 @@ Route::get('/orders', fn() => Order::all());
 Route::get('/order-items', fn() => OrderItem::all());
 Route::get('/promotions', fn() => Promotion::all());
 Route::get('/customers', fn() => Customer::all());
+
+Route::post('/orders', [OrderController::class, 'store']);
+Route::get('/orders', [OrderController::class, 'index']);
+Route::get('/orders/{id}', [OrderController::class, 'show']);
 
 // Blogs API endpoints
 Route::apiResource('blogs', BlogController::class);

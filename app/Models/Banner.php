@@ -16,6 +16,7 @@ class Banner extends Model
         'subtitle',
         'link',
         'is_active',
+        'text_color',
     ];
 
     protected $appends = ['image_url'];

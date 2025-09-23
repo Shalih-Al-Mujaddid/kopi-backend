@@ -29,7 +29,8 @@ class BannerController extends Controller
             'subtitle' => 'nullable|string|max:255',
             'image' => 'required|string',
             'link' => 'nullable|string',
-            'is_active' => 'boolean'
+            'is_active' => 'boolean',
+            'text_color' => 'nullable|string|max:7'
         ]);
 
         $banner = Banner::create($validated);
@@ -61,7 +62,8 @@ class BannerController extends Controller
             'subtitle' => 'nullable|string|max:255',
             'image' => 'sometimes|string',
             'link' => 'nullable|string',
-            'is_active' => 'boolean'
+            'is_active' => 'boolean',
+            'text_color' => 'nullable|string|max:7'
         ]);
 
         $banner->update($validated);

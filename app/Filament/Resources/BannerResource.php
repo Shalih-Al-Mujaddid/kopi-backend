@@ -54,6 +54,10 @@ class BannerResource extends Resource
                 Forms\Components\Toggle::make('is_active')
                     ->required()
                     ->default(true),
+                Forms\Components\ColorPicker::make('text_color')
+                    ->label('Text Color')
+                    ->default('#8B4513')
+                    ->helperText('Choose text color for the banner (default: brown)'),
             ]);
     }
 
@@ -66,6 +70,8 @@ class BannerResource extends Resource
                     ->size(50),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+                Tables\Columns\ColorColumn::make('text_color')
+                    ->label('Text Color'),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')

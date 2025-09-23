@@ -9,3 +9,92 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Custom brown colors for banner text */
+.text-brown {
+    color: #8B4513;
+}
+
+.text-brown-50 {
+    color: #FAF7F2;
+}
+
+.text-brown-100 {
+    color: #F2E8D9;
+}
+
+.text-brown-200 {
+    color: #E8D2B8;
+}
+
+.text-brown-300 {
+    color: #DEB894;
+}
+
+.text-brown-400 {
+    color: #D49E70;
+}
+
+.text-brown-500 {
+    color: #CA844C;
+}
+
+.text-brown-600 {
+    color: #B87333;
+}
+
+.text-brown-700 {
+    color: #8B4513;
+}
+
+.text-brown-800 {
+    color: #6B3410;
+}
+
+.text-brown-900 {
+    color: #4B230D;
+}
+
+.bg-brown {
+    background-color: #8B4513;
+}
+
+.bg-brown-50 {
+    background-color: #FAF7F2;
+}
+
+.bg-brown-100 {
+    background-color: #F2E8D9;
+}
+
+.bg-brown-200 {
+    background-color: #E8D2B8;
+}
+
+.bg-brown-300 {
+    background-color: #DEB894;
+}
+
+.bg-brown-400 {
+    background-color: #D49E70;
+}
+
+.bg-brown-500 {
+    background-color: #CA844C;
+}
+
+.bg-brown-600 {
+    background-color: #B87333;
+}
+
+.bg-brown-700 {
+    background-color: #8B4513;
+}
+
+.bg-brown-800 {
+    background-color: #6B3410;
+}
+
+.bg-brown-900 {
+    background-color: #4B230D;
+}
