@@ -14,7 +14,7 @@ use App\Models\Customer;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GalleryController;
-
+use App\Http\Controllers\CheckoutController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -41,3 +41,4 @@ Route::get('/orders/{id}', [OrderController::class, 'show']);
 
 // Blogs API endpoints
 Route::apiResource('blogs', BlogController::class);
+Route::post('/checkout', [CheckoutController::class, 'checkout']);

@@ -7,6 +7,8 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Midtrans\Snap;
+use Midtrans\Config;
 
 class OrderController extends Controller
 {
@@ -48,12 +50,37 @@ class OrderController extends Controller
                 ]);
             }
 
+            // === Midtrans Config ===
+            Config::$serverKey = config('midtrans.server_key');
+            Config::$isProduction = config('midtrans.is_production');
+            Config::$isSanitized = true;
+            Config::$is3ds = true;
+
+            // === Midtrans Params ===
+            $params = [
+                'transaction_details' => [
+                    'order_id' => $order->id,
+                    'gross_amount' => $order->total_price,
+                ],
+                'customer_details' => [
+                    'first_name' => $request->user()->name ?? 'Customer',
+                    'email' => $request->user()->email ?? 'customer@mail.com',
+                ],
+            ];
+
+            // === Dapatkan Snap Token ===
+            $snapToken = Snap::getSnapToken($params);
+
+            // Simpan Snap Token di DB
+            $order->update(['snap_token' => $snapToken]);
+
             DB::commit();
 
             return response()->json([
                 'success' => true,
                 'message' => 'Order created successfully',
                 'order_id' => $order->id,
+                'snap_token' => $snapToken,
                 'data' => $order->load('items.product')
             ], 201);
 
